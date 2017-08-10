@@ -111,10 +111,10 @@ namespace NewgroundsSongDownloader
 		{
 			HtmlWeb web = new HtmlWeb();
 			web.OverrideEncoding = Encoding.UTF8;
-			HtmlAgilityPack.HtmlDocument doc = web.Load("http://" + author + ".newgrounds.com/audio/");
-			var hNode = doc.DocumentNode.SelectNodes("//table[@class='audiolist']/tr/td/a");
 			try
 			{
+				HtmlAgilityPack.HtmlDocument doc = web.Load("http://" + author + ".newgrounds.com/audio/");
+				var hNode = doc.DocumentNode.SelectNodes("//table[@class='audiolist']/tr/td/a");
 				for (int i = 0; i < hNode.Count; i++)
 				{
 					GetUrl(Convert.ToInt32(hNode[i].OuterHtml.Split(new string[] { "/listen/", "\">" }, StringSplitOptions.RemoveEmptyEntries)[1]));
