@@ -15,11 +15,11 @@ namespace NewgroundsSongDownloader
 		[STAThread]
 		static void Main(string[] args)
 		{
-			Console.Title = "Newgrounds Song Downloader";
+			Console.Title = "Newgrounds歌曲下载器";
 			Console.ForegroundColor = ConsoleColor.Cyan;
-			Console.WriteLine("Thanks for using Newgrounds Song Downloader by WEGFan!\n");
+			Console.WriteLine("感谢使用由WEGFan制作的Newgrounds歌曲下载器!\n");
 			Console.ForegroundColor = ConsoleColor.Green;
-			Console.WriteLine("Enter ID of the songs and the authors to get the download URL. (e.g. '233333 f-777 666666 robtop)\nType '/a' to copy all URLs to the clipboard, type '/c' to clear the list.");
+			Console.WriteLine("输入歌曲的编号或艺术家名称来获取下载地址。 (例如： '233333 f-777 666666 robtop)\n输入 '/a' 来复制所有的地址到剪切板, 输入 '/c' 来清除列表.");
 
 			string input;
 
@@ -36,7 +36,7 @@ namespace NewgroundsSongDownloader
 							if (urlList.Count == 0)
 							{
 								Console.ForegroundColor = ConsoleColor.Red;
-								Console.WriteLine("The list is empty!");
+								Console.WriteLine("列表是空的");
 							}
 							else
 							{
@@ -45,7 +45,7 @@ namespace NewgroundsSongDownloader
 									cb += url + "\n";
 								Clipboard.SetText(cb);
 								Console.ForegroundColor = ConsoleColor.Yellow;
-								Console.WriteLine(urlList.Count + " URLs copied to clipboard.");
+								Console.WriteLine(urlList.Count + "个地址已复制到剪切板");
 							}
 							break;
 						}
@@ -54,7 +54,7 @@ namespace NewgroundsSongDownloader
 						{
 							urlList.Clear();
 							Console.ForegroundColor = ConsoleColor.Yellow;
-							Console.WriteLine("Done!");
+							Console.WriteLine("完成!");
 							break;
 						}
 
@@ -94,7 +94,7 @@ namespace NewgroundsSongDownloader
 				catch
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
-					Console.WriteLine("Can't find url for " + songID + ". The song may be removed.");
+					Console.WriteLine("无法为编号 " + songID + "找到歌曲. 此歌曲可能已经被移除.");
 				}
 			}
 			catch (WebException e)
@@ -102,7 +102,7 @@ namespace NewgroundsSongDownloader
 				if (e.Status == WebExceptionStatus.Timeout)
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
-					Console.WriteLine("Timeout.");
+					Console.WriteLine("连接超时.");
 				}
 			}
 		}
@@ -123,7 +123,7 @@ namespace NewgroundsSongDownloader
 			catch
 			{
 				Console.ForegroundColor = ConsoleColor.Red;
-				Console.WriteLine("Can't find songs by " + author + ". Please check your input or the author hasn't uploaded any songs yet.");
+				Console.WriteLine("无法找到艺术家" + author + "的歌曲. 这可能是因为输入错误，或这个艺术家暂未上传任何歌曲");
 			}
 		}
 
