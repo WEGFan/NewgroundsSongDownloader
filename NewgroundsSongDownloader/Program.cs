@@ -94,7 +94,7 @@ namespace NewgroundsSongDownloader
 				catch
 				{
 					Console.ForegroundColor = ConsoleColor.Red;
-					Console.WriteLine("无法为编号 " + songID + "找到歌曲. 此歌曲可能已经被移除.");
+					Console.WriteLine("无法找到编号为" + songID + "的歌曲. 此歌曲可能已经被移除.");
 				}
 			}
 			catch (WebException e)
@@ -123,7 +123,7 @@ namespace NewgroundsSongDownloader
 			catch
 			{
 				Console.ForegroundColor = ConsoleColor.Red;
-				Console.WriteLine("无法找到艺术家" + author + "的歌曲. 这可能是因为输入错误，或这个艺术家暂未上传任何歌曲");
+				Console.WriteLine("无法找到艺术家 " + author + " 的歌曲. 这可能是因为输入错误，或这个艺术家暂未上传任何歌曲");
 			}
 		}
 
