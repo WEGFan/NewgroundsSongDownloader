@@ -83,10 +83,10 @@ namespace NewgroundsSongDownloader
 			try
 			{
 				HtmlAgilityPack.HtmlDocument doc = web.Load("http://www.newgrounds.com/audio/listen/" + songID);
-				var hNode = doc.DocumentNode.SelectNodes("/html/body/div[3]/div[3]/div[1]/script[5]");
+                var hNode = doc.DocumentNode.SelectNodes("/html/body/div[3]/div[3]/div[1]/script[4]");
 				try
 				{
-					songUrl = hNode[0].InnerText.Split(new string[] { "\":\"", "\",\"" }, StringSplitOptions.RemoveEmptyEntries)[1].Replace("\\", "");
+					songUrl = hNode[0].InnerText.Split(new string[] { "\":\"", "?" }, StringSplitOptions.RemoveEmptyEntries)[1].Replace("\\", "");
 					urlList.Add(songUrl);
 					Console.ForegroundColor = ConsoleColor.Yellow;
 					Console.WriteLine(songUrl);
