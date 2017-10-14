@@ -20,8 +20,10 @@ namespace NewgroundsSongDownloader
 			Console.WriteLine("Thanks for using Newgrounds Song Downloader by WEGFan!\n");
 			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("Enter ID of the songs and the authors to get the download URL. (e.g. '233333 f-777 666666 robtop)\nType '/a' to copy all URLs to the clipboard, type '/c' to clear the list.");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Due to the captcha system added by Newgrounds, please do not download too many songs in a short period of time.");
 
-			string input;
+            string input;
 
 			while (true)
 			{
