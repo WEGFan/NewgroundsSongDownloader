@@ -20,10 +20,10 @@ namespace NewgroundsSongDownloader
 			Console.WriteLine("Thanks for using Newgrounds Song Downloader by WEGFan!\n");
 			Console.ForegroundColor = ConsoleColor.Green;
 			Console.WriteLine("Enter ID of the songs and the authors to get the download URL. (e.g. '233333 f-777 666666 robtop)\nType '/a' to copy all URLs to the clipboard, type '/c' to clear the list.");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Due to the captcha system added by Newgrounds, please do not download too many songs in a short period of time.");
+			Console.ForegroundColor = ConsoleColor.Red;
+			Console.WriteLine("Due to the captcha system added by Newgrounds, please do not download too many songs in a short period of time.");
 
-            string input;
+			string input;
 
 			while (true)
 			{
@@ -85,7 +85,7 @@ namespace NewgroundsSongDownloader
 			try
 			{
 				HtmlAgilityPack.HtmlDocument doc = web.Load("http://www.newgrounds.com/audio/listen/" + songID);
-                var hNode = doc.DocumentNode.SelectNodes("/html/body/div[3]/div[3]/div[1]/script[4]");
+				var hNode = doc.DocumentNode.SelectNodes("/html/body/div[6]/div[2]/div[2]/div[1]/div/div[3]/div[1]/script[4]");
 				try
 				{
 					songUrl = hNode[0].InnerText.Split(new string[] { "\":\"", "?" }, StringSplitOptions.RemoveEmptyEntries)[1].Replace("\\", "");
